@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ id }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <div id="rating" class="bg-image shadow-2-strong">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+            <div class="container-rating d-flex h-100">
+                <div class="text-white">
+                    {% if bk_list[id - 1]: %}
+                        {% for book in bk_list: %}
+                            {% if book.id == id:  %}
+                                <h2>Book: {{ book.title }}</h2><br><br>
+                                <h5>Current rating: {{ book.rating }}</h5><br><br>
+                                    <div class="rating-box">
+                                        <form action="{{ url_for('rating', id=book.id) }}" method="POST">
+                                            <div class="mb-3">
+                                                <input type="text" name="rating" class="area-write"><br><br>
+                                                <input type="submit" name="Change Rating"><br><br>
+                                            </div>
+                                        </form>
+                                    </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% else: %}
+                        <h1 class="else-heading">Record is not updated in the database, Please refresh/ reload the site.</h1>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

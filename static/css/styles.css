@@ -1,0 +1,56 @@
+/* index */
+#intro {
+    background-image: url("https://images.pexels.com/photos/2623828/pexels-photo-2623828.jpeg?auto=compress&cs=tinysrgb&w=600");
+    padding: 2%;
+}
+
+.container-top {
+    padding: 12.6rem;
+    text-align: left;
+    line-height: 2rem;
+}
+.col {
+    padding: 1rem;
+    text-align: left;
+}
+/* Function to change width accordingly: */
+@media (min-width: 992px) {
+    #intro {
+        margin-top: 0
+    }
+    #add {
+        margin-top: 0
+    }
+}
+/* add */
+#add {
+    background-image: url("https://images.pexels.com/photos/3704611/pexels-photo-3704611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    padding: 2%;
+}
+.container-add {
+    padding: 12.6rem;
+    text-align: left;
+    line-height: 2rem;
+}
+.area-write {
+    width: 40rem;
+}
+
+.heading {
+    padding: 20px;
+    text-align: left;
+}
+/* Rating */
+#rating {
+    background-image: url("https://images.pexels.com/photos/2883049/pexels-photo-2883049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    padding: 2%;
+}
+.container-rating {
+    padding: 12.6rem;
+    text-align: left;
+    line-height: 2rem;
+}
+.else-heading {
+    z-index: 10;
+}
+
