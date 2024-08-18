@@ -22,10 +22,12 @@ class Books(db.Model):
 
 
 # Creating a database file
-db.create_all()
+with app.app_context():
+    db.create_all()
 
 # Get all books form the database
-all_books = db.session.query(Books).all()
+with app.app_context():
+    all_books = db.session.query(Books).all()
 
 
 # Adding routes
